@@ -10,7 +10,7 @@ vector<double> input_numbers(size_t count) {
     }
     return result;
 }
-
+//поиск минимума и максимума
 void find_minmax(vector<double> numbers, double& min, double& max) {
     min = numbers[0];
     max = numbers[0];
@@ -20,6 +20,7 @@ void find_minmax(vector<double> numbers, double& min, double& max) {
     }
 
 }
+//Расчет гистограммы
 vector<size_t> make_histogram(const vector<double> numbers, size_t bin_count){
     double min,max;
     find_minmax(numbers, min, max);
@@ -41,6 +42,8 @@ vector<size_t> make_histogram(const vector<double> numbers, size_t bin_count){
     }
     return bins;
 }
+
+//Вывод гистограммы
 void show_histogram_text(vector<size_t>bins){
     const size_t SCREEN_WIDTH = 80;
     const size_t MAX_ASTERISK = SCREEN_WIDTH - 3 - 1;
@@ -51,7 +54,6 @@ void show_histogram_text(vector<size_t>bins){
         }
     }
     for (size_t bin: bins){
-
         size_t height = bin;
         if (max_bin > MAX_ASTERISK){
             height = MAX_ASTERISK * (static_cast<double> (bin) / max_bin);
@@ -66,7 +68,30 @@ void show_histogram_text(vector<size_t>bins){
         cout << endl;
     }
 }
+void svg_begin(double width, double height) {
+    cout << "<?xml version='1.0' encoding='UTF-8'?>\n";
+    cout << "<svg ";
+    cout << "width='" << width << "' ";
+    cout << "height='" << height << "' ";
+    cout << "viewBox='0 0 " << width << " " << height << "' ";
+    cout << "xmlns='http://www.w3.org/2000/svg'>\n";
+}
 
+void svg_end() {
+    cout << "</svg>\n";
+}
+void svg_text(double left, double baseline, string text) {
+    cout << "<text x='" << left << "' y='"<< baseline <<"'>'"<< text <<"'</text>";
+}
+void svg_rect(double x, double y, double width, double height){
+    cout << "<rect x='"<< x <<"' y='"<< y <<"' width='"<< width <<"' height='"<< height <<"'></rect>";
+
+}
+void show_histogram_svg(const vector<size_t>& bins) {
+    svg_begin(400, 300);
+    svg_rect(50,0,bins[0] * 100,30);
+    svg_end();
+}
 int main(){
     //Ввод данных
     size_t number_count;
@@ -77,10 +102,7 @@ int main(){
     size_t bin_count;
     cerr << "Enter bin count:";
     cin >> bin_count;
-    //Расчет гистограммы
     const auto bins = make_histogram(numbers, bin_count);
-
-    //Вывод гистограммы
-    show_histogram_text(bins);
+    show_histogram_svg(bins);
     return 0;
 }
