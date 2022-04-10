@@ -21,7 +21,10 @@ int main(){
     size_t bin_count;
     cerr << "Enter bin count:";
     cin >> bin_count;
+    size_t height_historgam;
+    cerr << "Enter height historgram:";
+    cin >> height_historgam;
     const auto bins = make_histogram(numbers, bin_count);
-    show_histogram_svg(bins);
+    show_histogram_svg(bins, height_historgam);
     return 0;
 }
