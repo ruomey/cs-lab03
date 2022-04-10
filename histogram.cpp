@@ -75,8 +75,8 @@ void svg_begin(double width, double height) {
 void svg_end() {
     cout << "</svg>\n";
 }
-void svg_text(double left, double baseline, string text) {
-    cout << "<text x='" << left << "' y='"<< baseline <<"'>'"<< text <<"'</text>";
+void svg_text(double left, double baseline, string text, double font_size) {
+    cout << "<text x='" << left << "' y='"<< baseline << "' font-size='" << font_size <<"'>'"<< text <<"'</text>";
 }
 void svg_rect(double x, double y, double width, double height, string stroke, string fill){
     cout << "<rect x='"<< x <<"' y='"<< y <<"' width='"<< width <<"' height='"<< height <<"' stroke='"<< stroke <<"' fill='"<< fill <<"'></rect>\n";
@@ -106,8 +106,9 @@ void show_histogram_svg(const vector<size_t>& bins, size_t height_bin) {
             height = HISTOGRAM_MAX_WIDTH * (static_cast<double> (bin) / (max_bin * BLOCK_WIDTH));
         }
         const double bin_width = BLOCK_WIDTH * height;
-        svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
-        svg_rect(TEXT_WIDTH, top, bin_width, height_bin,"#474A51","#DC143C");
+        double font_size = height_bin/2;
+        svg_text(TEXT_LEFT, top + height_bin/2, to_string(bin), font_size);
+        svg_rect(TEXT_WIDTH + height_bin, top, bin_width, height_bin,"#474A51","#DC143C");
         top += height_bin;
     }
     svg_end();
