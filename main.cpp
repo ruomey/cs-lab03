@@ -2,6 +2,7 @@
 #include <vector>
 #include <math.h>
 #include "histogram.h"
+#include "svg.h"
 using namespace std;
 
 vector<double> input_numbers(size_t count) {

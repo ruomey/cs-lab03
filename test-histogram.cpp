@@ -42,9 +42,28 @@ void test_void(){
     assert(max == 0);
 
 }
+void test_heigth_min(){
+    size_t height = 5;
+    test_height(height,5,700);
+    assert(height == 5);
+}
+void test_heigth_max(){
+    size_t height = 250;
+    test_height(height,5,700);
+    assert(height == (700/5));
+}
+void test_heigth_equal(){
+    size_t height = 140;
+    test_height(height,5,700);
+    assert(height == 140);
+}
+
 int main() {
     test_positive();
     test_negative();
     equal();
+    test_heigth_min();
+    test_heigth_max();
+    test_heigth_equal();
 }
 
