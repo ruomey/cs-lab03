@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1652631718 source:d:\programming in mpei\1st\main.cpp
+1652635965 source:d:\programming in mpei\1st\main.cpp
 	<iostream>
 	<vector>
 	<math.h>
+	<curl/curl.h>
 	"histogram.h"
 	"svg.h"
 
@@ -28,4 +29,48 @@
 	<vector>
 	<math.h>
 	"svg.h"
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\curl.h
+	"curlver.h"
+	"system.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	"easy.h"
+	"multi.h"
+	"urlapi.h"
+	"options.h"
+	"header.h"
+	"typecheck-gcc.h"
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\curlver.h
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\system.h
+	<winsock2.h>
+	<windows.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/poll.h>
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\easy.h
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\multi.h
+	"curl.h"
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\urlapi.h
+	"curl.h"
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\options.h
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\header.h
+
+1652634072 d:\programming in mpei\1st\curl\include\curl\typecheck-gcc.h
 
