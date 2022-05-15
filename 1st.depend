@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1652627869 source:d:\programming in mpei\1st\main.cpp
+1652630865 source:d:\programming in mpei\1st\main.cpp
 	<iostream>
 	<vector>
 	<math.h>
 	"histogram.h"
 	"svg.h"
 
-1649664424 d:\programming in mpei\1st\histogram.h
+1652631242 d:\programming in mpei\1st\histogram.h
 	<iostream>
 	<vector>
 	<math.h>
 
-1650821333 source:d:\programming in mpei\1st\histogram.cpp
+1652631207 source:d:\programming in mpei\1st\histogram.cpp
 	<iostream>
 	<vector>
 	<math.h>

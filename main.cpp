@@ -5,12 +5,6 @@
 #include "svg.h"
 using namespace std;
 
-
-struct Input {
-    vector<double> numbers;
-    size_t bin_count;
-};
-
 vector<double> input_numbers(istream &in, size_t count) {
     vector<double> result(count);
     for (size_t i = 0; i < count; i++) {
@@ -43,7 +37,7 @@ int main(){
     //¬вод данных
     Input data;
     data = read_input(cin);
-    const auto bins = make_histogram(data.numbers, data.bin_count);
+    const auto bins = make_histogram(data);
     show_histogram_svg(bins);
     return 0;
 }
