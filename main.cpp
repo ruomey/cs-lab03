@@ -33,7 +33,11 @@ Input read_input(istream& in, bool prompt) {
 
 
 
-int main(){
+int main(int argc, char* argv[]) {
+    if (argc > 1) {
+        printf("%d %s", argc, *argv);
+        return 0;
+    }
     //¬вод данных
     curl_global_init(CURL_GLOBAL_ALL);
     const auto data = read_input(cin,true);
