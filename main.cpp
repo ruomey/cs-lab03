@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <winsock2.h>
 #include <windows.h>
 #include "histogram.h"
 #include "svg.h"
@@ -16,7 +17,14 @@ vector<double> input_numbers(size_t count) {
 }
 int main(){
     //¬вод данных
-    printf("%u\n%08x\n",GetVersion(),GetVersion());
+    DWORD info = GetVersion();
+    DWORD mask = 0x0000ffff;
+    DWORD version = info&mask;
+    DWORD platf = info >> 16;
+    printf("%u\n%08x\nVersion = %u\nPlatform = %u\n",info,info,version,platf);
+    DWORD MajorVer = version & 0x00ff;
+    DWORD MinorVer = version >> 8;
+    printf("MajorVersion = %u\nMinorVer = %u",MajorVer,MinorVer);
     return 0;
     size_t number_count;
     cerr << "Enter number count:";
