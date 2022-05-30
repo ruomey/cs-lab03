@@ -21,10 +21,16 @@ int main(){
     DWORD mask = 0x0000ffff;
     DWORD version = info&mask;
     DWORD platf = info >> 16;
-    printf("%u\n%08x\nVersion = %u\nPlatform = %u\n",info,info,version,platf);
+    //printf("%u\n%08x\nVersion = %u\nPlatform = %u\n",info,info,version,platf);
     DWORD MajorVer = version & 0x00ff;
     DWORD MinorVer = version >> 8;
-    printf("MajorVersion = %u\nMinorVer = %u",MajorVer,MinorVer);
+    //printf("MajorVersion = %u\nMinorVer = %u\n",MajorVer,MinorVer);
+    printf("Windows v%u.%u", MajorVer, MinorVer);
+    if ((info&0x4000'0000)==0){
+        DWORD build = platf;
+        printf("(build %u)\n", build);
+
+    }
     return 0;
     size_t number_count;
     cerr << "Enter number count:";
