@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <windows.h>
 #include "histogram.h"
 #include "svg.h"
+
 using namespace std;
 
 vector<double> input_numbers(size_t count) {
@@ -14,6 +16,8 @@ vector<double> input_numbers(size_t count) {
 }
 int main(){
     //¬вод данных
+    printf("%u\n%08x\n",GetVersion(),GetVersion());
+    return 0;
     size_t number_count;
     cerr << "Enter number count:";
     cin >> number_count;
