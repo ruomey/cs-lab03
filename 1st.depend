@@ -1,4 +1,6 @@
 # depslib dependency file v1.0
+39 <<<<<<< HEAD
+
 1652651821 source:d:\programming in mpei\1st\main.cpp
 	<iostream>
 	<vector>
@@ -15,22 +17,46 @@
 	<math.h>
 
 1652631207 source:d:\programming in mpei\1st\histogram.cpp
+
+1653894205 source:d:\programming_in_mpei\1st\histogram.cpp
 	<iostream>
 	<vector>
 	<math.h>
 	"histogram.h"
 	<cassert>
 
+1653892397 04part2
+	<iostream>
+	<vector>
+	<math.h>
+	"histogram.h"
+	<cassert>
+	<iostream>
+	<vector>
+	<math.h>
+	<iostream>
+	<vector>
+	<math.h>
+	"svg.h"
+	"svg.h"
+
+1653865340 D
+
 1652627908 d:\programming in mpei\1st\svg.h
+
+1653894205 d:\programming_in_mpei\1st\histogram.h
 	<iostream>
 	<vector>
 	<math.h>
 
 1652627711 source:d:\programming in mpei\1st\svg.cpp
+
+1653895737 source:d:\programming_in_mpei\1st\svg.cpp
 	<iostream>
 	<vector>
 	<math.h>
 	"svg.h"
+	"histogram.h"
 
 1652640520 d:\programming in mpei\1st\curl\include\curl\curl.h
 	"curlver.h"
@@ -76,29 +102,19 @@
 
 1652640520 d:\programming in mpei\1st\curl\include\curl\typecheck-gcc.h
 
-1652631207 source:d:\programming_in_mpei\1st\histogram.cpp
-	<iostream>
-	<vector>
-	<math.h>
-	"histogram.h"
-	<cassert>
-
-1653861603 d:\programming_in_mpei\1st\histogram.h
-	<iostream>
-	<vector>
-	<math.h>
-
-1653858146 source:d:\programming_in_mpei\1st\main.cpp
+1653895753 source:d:\programming_in_mpei\1st\main.cpp
 	<iostream>
 	<vector>
 	<math.h>
 	<curl/curl.h>
 	<sstream>
 	<string>
+	<winsock2.h>
+	<windows.h>
 	"histogram.h"
 	"svg.h"
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\curl.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\curl.h
 	"curlver.h"
 	"system.h"
 	<stdio.h>
@@ -118,9 +134,9 @@
 	"header.h"
 	"typecheck-gcc.h"
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\curlver.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\curlver.h
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\system.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\system.h
 	<winsock2.h>
 	<windows.h>
 	<ws2tcpip.h>
@@ -128,28 +144,27 @@
 	<sys/socket.h>
 	<sys/poll.h>
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\easy.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\easy.h
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\multi.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\multi.h
 	"curl.h"
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\urlapi.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\urlapi.h
 	"curl.h"
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\options.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\options.h
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\header.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\header.h
 
-1652640520 d:\programming_in_mpei\1st\curl\include\curl\typecheck-gcc.h
+1653894218 d:\programming_in_mpei\1st\curl\include\curl\typecheck-gcc.h
 
-1653861603 d:\programming_in_mpei\1st\svg.h
+1653895737 d:\programming_in_mpei\1st\svg.h
 	<iostream>
 	<vector>
+	<winsock2.h>
+	<windows.h>
 	<math.h>
+	"histogram.h"
 
-1653861603 source:d:\programming_in_mpei\1st\svg.cpp
-	<iostream>
-	<vector>
-	<math.h>
-	"svg.h"
+1653861603 
 

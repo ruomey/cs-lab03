@@ -4,6 +4,8 @@
 #include <curl/curl.h>
 #include <sstream>
 #include <string>
+#include <winsock2.h>
+#include <windows.h>
 #include "histogram.h"
 #include "svg.h"
 using namespace std;
@@ -15,7 +17,6 @@ vector<double> input_numbers(istream &in, size_t count) {
     }
     return result;
 }
-
 
 Input read_input(istream& in, bool prompt) {
     Input data;
