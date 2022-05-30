@@ -24,6 +24,19 @@ void svg_rect(double x, double y, double width, double height, string stroke, st
     cout << "<rect x='"<< x <<"' y='"<< y <<"' width='"<< width <<"' height='"<< height <<"' stroke='"<< stroke <<"' fill='"<< fill <<"'></rect>\n";
 
 }
+void computer_name (char comp_name[],DWORD &MinorVer,DWORD &MajorVer, DWORD &build,DWORD max_len){
+    GetComputerNameA(comp_name, &max_len);
+    DWORD info = GetVersion();
+    DWORD mask = 0x0000ffff;
+    DWORD version = info&mask;
+    DWORD platf = info >> 16;
+    MajorVer = version & 0x00ff;
+    MinorVer = version >> 8;
+    if ((info&0x4000'0000)==0){
+        build = platf;
+    }
+
+}
 void show_histogram_svg(const vector<size_t> bins, size_t height_bin) {
     const auto IMAGE_WIDTH = 400;
     const auto IMAGE_HEIGHT = 700;
@@ -32,6 +45,10 @@ void show_histogram_svg(const vector<size_t> bins, size_t height_bin) {
     const auto TEXT_WIDTH = 50;
     const auto BLOCK_WIDTH = 10;
     const auto HISTOGRAM_MAX_WIDTH = IMAGE_WIDTH - TEXT_LEFT - TEXT_WIDTH;
+    DWORD MinorVer,MajorVer,build;
+    DWORD max_len = MAX_COMPUTERNAME_LENGTH + 1;
+    char comp_name[max_len];
+    computer_name(comp_name,MinorVer,MajorVer,build,max_len);
     size_t max_bin = bins[0];
     test_height(height_bin,bins.size(),IMAGE_HEIGHT);
     for (size_t bin : bins){
@@ -39,17 +56,21 @@ void show_histogram_svg(const vector<size_t> bins, size_t height_bin) {
     }
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     double top = 0;
+    double font_size = height_bin/2;
     for (size_t bin : bins) {
         size_t height = bin;
         if (max_bin * BLOCK_WIDTH > HISTOGRAM_MAX_WIDTH){
             height = HISTOGRAM_MAX_WIDTH * (static_cast<double> (bin) / (max_bin * BLOCK_WIDTH));
         }
         const double bin_width = BLOCK_WIDTH * height;
-        double font_size = height_bin/2;
         svg_text(TEXT_LEFT, top + height_bin/2, to_string(bin), font_size);
         svg_rect(TEXT_WIDTH + height_bin, top, bin_width, height_bin,"#474A51","#DC143C");
         top += height_bin;
     }
+    svg_text(TEXT_LEFT, top + height_bin/2, "Windows v" + to_string(MajorVer) +"."+ to_string(MinorVer) + " " + "build("+ to_string(build) + ")", font_size/1.5);
+    top += height_bin/2;
+    svg_text(TEXT_LEFT, top + height_bin/2,"Computer name: ", font_size/1.5);
+    svg_text(TEXT_LEFT+height_bin*2.5, top + height_bin/2,comp_name, font_size/1.5);
     svg_end();
 }
 

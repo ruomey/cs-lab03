@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1653865340 source:d:\programming_in_mpei\1st\histogram.cpp
+	<iostream>
+	<vector>
+	<math.h>
+	"histogram.h"
+	<cassert>
+
+1653865340 d:\programming_in_mpei\1st\histogram.h
+	<iostream>
+	<vector>
+	<math.h>
+
+1653865340 source:d:\programming_in_mpei\1st\svg.cpp
+	<iostream>
+	<vector>
+	<math.h>
+	"svg.h"
+
+1653892833 d:\programming_in_mpei\1st\svg.h
+	<iostream>
+	<vector>
+	<winsock2.h>
+	<windows.h>
+	<math.h>
+
+1653892397 source:d:\programming_in_mpei\1st\main.cpp
+	<iostream>
+	<vector>
+	<math.h>
+	<winsock2.h>
+	<windows.h>
+	"histogram.h"
+	"svg.h"
+
